@@ -13,7 +13,7 @@ You can edit this file at **`[ ../src/config.js ]`**
 | **auth0** | - | Object | `auth0 login config` |
 
 {% tabs %}
-{% tab title="constant.js" %}
+{% tab title="config.js" %}
 ```javascript
 export default {
     basename: '/material-ui', // only at build time to set, like ///able-pro/react/default
