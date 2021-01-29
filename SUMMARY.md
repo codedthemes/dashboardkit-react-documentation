@@ -9,6 +9,9 @@
 * [Routing](routing.md)
 * [Template Config](template-config.md)
 * [Layout Option](layout-option.md)
+* [Default Theme](default-theme.md)
+* [Color Management](color-management.md)
+* [State Management](state-management.md)
 * [Support](support.md)
 * [Changelog](changelog.md)
 
