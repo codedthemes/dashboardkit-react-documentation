@@ -1,5 +1,5 @@
 ---
-description: Materially Documentation - ReactJS + Material UI Admin Template
+description: Materially Documentation - React.js + Material UI Admin Template
 ---
 
 # Welcome
