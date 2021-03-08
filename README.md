@@ -24,7 +24,7 @@ We’ve followed the best industry standards to make our product easy, fast & hi
 * Easy to Build and Setup
 * Clear Cut Code style
 
-## Technical Specification  \(Credits 🙏\)
+## Technical Specification  \(Credits\)
 
 * React Hooks \(**17.0.1**\)
 * [Material UI](https://material-ui.com/) \(4.11.0\)
