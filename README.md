@@ -4,7 +4,7 @@ description: Materially Documentation - React.js + Material UI Admin Template
 
 # Welcome
 
-## ABOUT DOCS
+## About
 
 **Materially** is the most developer-friendly & highly customizable React **Hooks** + Redux with **Material UI**
 
