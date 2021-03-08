@@ -12,7 +12,7 @@ Before proceeding you’ll need to have the latest stable [NodeJS](https://nodej
 ## To get started follow these steps
 
 1. First of all, it's required to install [Node](https://nodejs.org/en/) and npm / [yarn](https://yarnpkg.com/lang/en/).
-2. Open your favorite console application \(Terminal, iTerm, Command Prompt, etc.\). Navigate to the `able-pro-material/`folder and **Install packages**  : `npm i,` `npm install` or `yarn install`. This command will install all the required [Node.js ](https://nodejs.org/en/)modules into the directory`node_modules`inside `able-pro-material/`folder. And now, you are ready to run the able pro material for the first time.
+2. Open your favorite console application \(Terminal, iTerm, Command Prompt, etc.\). Navigate to the `materially/`folder and **Install packages**  : `npm i,` `npm install` or `yarn install`. This command will install all the required [Node.js ](https://nodejs.org/en/)modules into the directory`node_modules`inside `materially/`folder. And now, you are ready to run the able pro material for the first time.
 3. To run the project locally: `npm start` or `yarn start` This command will runs the app in development mode. Open [http://localhost:3000](http://localhost:3000/) to view it in the browser.
 
    The page will automatically reload if you make changes to the code.
@@ -26,7 +26,7 @@ The project was built assuming it is hosted at the server root folder of domain/
 You can control this with the homepage field in your `package.json`. To deploy build for sub-folder i.e `http://example.com/folder-name/` than `"homepage" : "http://example.com/folder-name/".`
 
 You also need to set base-name `<BrowserRouter basename="folder-name">` in file`constant.js` at '../src/config/' directory, like  
-**`export const BASENAME = '/able-pro-material';`**
+**`export const BASENAME = '/materially';`**
 {% endhint %}
 
 You can find detailed instructions on using Create React App and many tips in [its documentation](https://facebook.github.io/create-react-app/).

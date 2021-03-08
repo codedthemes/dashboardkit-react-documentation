@@ -11,7 +11,7 @@ File Structures is the Organization of Data in Secondary Storage Device in such 
 Under the `able-pro-material/`the folder you will find the project folder structure.
 
 ```text
-able-pro-material/
+materially/
 ├── package.json             -> Package json file.
 ├── public/
 │   ├── favicon.ico
@@ -40,7 +40,7 @@ able-pro-material/
 
 ## JSS with SCSS Structure
 
-Under the `able-pro-material/src/assets/scss/`the folder you will find the following folder structure.
+Under the `materially/src/assets/scss/`the folder you will find the following folder structure.
 
 ```text
 SCSS/

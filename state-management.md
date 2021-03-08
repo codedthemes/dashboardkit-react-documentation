@@ -6,7 +6,7 @@ Context provides a way to pass data through the component tree without having to
 
 ## [Redux](https://redux-toolkit.js.org/)
 
-**React Redux** is the official **React** binding for **Redux**. It lets your **React** components read data from a **Redux** store, and dispatch actions to the store to update data.
+React Redux is the official React binding for Redux. It lets your React components read data from a Redux store, and dispatch actions to the store to update data.
 
 ## [State, Action & Reducer](https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers)
 

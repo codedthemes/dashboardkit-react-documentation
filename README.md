@@ -1,14 +1,14 @@
 ---
-description: ABLE PRO -  REACT HOOKS + REDUX  WITH MATERIAL UI ADMIN TEMPLATE
+description: Materially - ReactJS + Material UI Admin Template
 ---
 
 # Welcome
 
 ## ABOUT DOCS
 
-**Able Pro** is the most developer-friendly & highly customizable **React** **Hooks** + Redux With **Material UI** Admin Template based on Create React App, Hooks, Redux & Material UI.
+**Materially** is the most developer-friendly & highly customizable React **Hooks** + Redux with **Material UI**
 
-We’ve followed the best industry standards to make our product easy, fast & highly scalable to work with. **Able Pro React Material UI** is the most convenient react hooks admin dashboard template for developers as it's made with React Hooks, Components, Create React App, Redux, clean code, and fully documented which allows you to build eye-catching, high-quality, high-performance responsive single-page applications.
+We’ve followed the best industry standards to make our product easy, fast & highly scalable to work with. Materially is the most convenient react hooks admin dashboard template for developers as it's made with React Hooks, Components, Create React App, Redux, clean code, and fully documented which allows you to build eye-catching, high-quality, high-performance responsive single-page applications.
 
 ## Features
 
@@ -27,7 +27,7 @@ We’ve followed the best industry standards to make our product easy, fast & hi
 ## Technical Specification  \(Credits 🙏\)
 
 * React Hooks \(**17.0.1**\)
-* [Material UI](https://material-ui.com/) \(4.x.x\)
+* [Material UI](https://material-ui.com/) \(4.11.0\)
 * SASS with JSS Powered
 * \*\*\*\*[Create React App](https://github.com/facebook/create-react-app) ****
 * [Redux](https://redux.js.org/)
@@ -40,5 +40,5 @@ We’ve followed the best industry standards to make our product easy, fast & hi
 
 If you have any suggestions regarding “How To” recipes that should be on this page, Let’s know. We always appreciate your feedback.
 
-Reach us at [support@codedthemes.com](mailto:support@codedthemes.com)
+Reach us at codedthemes\[at\].gmail\[dot\]com
 

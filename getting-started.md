@@ -1,5 +1,5 @@
 ---
-description: Things to know before you start with Able Pro React Hooks with Material UI
+description: Things to know before you start with Materially
 ---
 
 # Getting Started
@@ -25,7 +25,7 @@ description: Things to know before you start with Able Pro React Hooks with Mate
   * [`useLayoutEffect`](https://reactjs.org/docs/hooks-reference.html#uselayouteffect)
   * [`useDebugValue`](https://reactjs.org/docs/hooks-reference.html#usedebugvalue)
 
-## React Material UI
+## Material UI React Library
 
 A perfect library with everything power-packed covering almost all the **UI** components that can be flexibly **used with React** web or mobile application. **Material**-**UI** components work in isolation. They are self-supporting, and will only inject the styles they need to display.
 

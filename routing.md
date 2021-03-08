@@ -1,6 +1,6 @@
 # Routing
 
-This template routing system based on [react-router](https://reacttraining.com/react-router/) and its package [react-router-dom,](https://reacttraining.com/react-router/web/guides/quick-start) it's also using code splitting for better performance.
+This Template routing system based on [react-router](https://reacttraining.com/react-router/) and its package [react-router-dom,](https://reacttraining.com/react-router/web/guides/quick-start) it's also using code splitting for better performance.
 
 {% hint style="info" %}
 **How can I add a new page with a menu item?**
@@ -10,7 +10,7 @@ You can use the below explanation to add/remove menu routes and their menu items
 
 ## Configure route
 
-Open`able-pro-naterial/src/Routes.js`You will find the below example code. In the below code we have shown how you can add a new page route.
+Open`materially/src/Routes.js`You will find the below example code. In the below code we have shown how you can add a new page route.
 
 {% tabs %}
 {% tab title="router.js" %}
@@ -80,7 +80,7 @@ export default Routes;
 
 ## Add menu item
 
-To add menu items you can use file `able-pro-material/src/menu-items.js`. In the below code, we have shown how you can use a new menu item.
+To add menu items you can use file `materially/src/menu-items.js`. In the below code, we have shown how you can use a new menu item.
 
 {% tabs %}
 {% tab title="menus.js" %}

@@ -16,7 +16,7 @@ You can edit this file at **`[ ../src/config.js ]`**
 {% tab title="config.js" %}
 ```javascript
 export default {
-    basename: '/material-ui', // only at build time to set, like ///able-pro/react/default
+    basename: '/material-ui', // only at build time to set, like ///materially/react/default
     theme: 'light', // 'light', 'dark', 'nav-dark'
     jwt: {
         secret: 'SECRET-KEY',

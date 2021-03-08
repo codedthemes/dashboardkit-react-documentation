@@ -9,14 +9,6 @@ You can edit this file at **`[ ../src/config.js]`**
 ## Main Layouts
 
 {% tabs %}
-{% tab title="Default" %}
-* theme:`light`
-{% endtab %}
-
-{% tab title="Nav-Dark" %}
-* theme:`nav-dark`
-{% endtab %}
-
 {% tab title="Light Layout" %}
 * theme:`light`
 {% endtab %}

@@ -1,16 +1,16 @@
 ---
-description: >-
-  Able Pro react hooks with material UI supports three popular authentication
-  methods.
+description: Materially supports 3 popular Authentication methods.
 ---
 
 # Authentication
 
-Able Pro React Hooks with Material UI supports 3 authentication methods:  **Firebase Authentication, JSON Web Token, Auth0**. We provide Firebase Authentication by default.
+Materially supports 3 authentication methods:  **Firebase Authentication, JSON Web Token, Auth0**.
+
+**FYI** - We provide Firebase Authentication by default.
 
 ## How does it work?
 
-Only authenticated users can access dashboard pages. If a user is not authenticated, the user redirected to the login page. 
+Only authenticated users can access dashboard pages. If a user is not authenticated, the user redirected to the login page.
 
 We implemented to make this work the “Guard” concept from Angular. It is simply a component that wraps a route and checks for user authentication status before allowing the navigation. 
 
