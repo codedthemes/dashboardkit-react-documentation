@@ -14,20 +14,19 @@ We’ve followed the best industry standards to make our product easy, fast & hi
 
 * Material UI
 * React Hooks
-* Thir-Party Authentication
+* 3'rd Party Authentication using JWT, Auth0 & Firebase
 * Fully Responsive Layout 
-* Dashboard, **380+ Widget** Cards
+* Dashboard, 50+ Widget Cards
 * JSS Powered
-* **75+ Pages**
-* Live Menu Customize
-* 6 months of free support included
-* Easy to Build and Setup
-* Clear Cut Code style
+* 75+ Pages
+* 6 months of free technical support
+* Easy to customize
+* Performance centric code
 
 ## Technical Specification  \(Credits\)
 
-* React Hooks \(**17.0.1**\)
-* [Material UI](https://material-ui.com/) \(4.11.0\)
+* React Hooks \(17.0.1\)
+* [Material UI](https://material-ui.com/) \(4.11.x\)
 * SASS with JSS Powered
 * \*\*\*\*[Create React App](https://github.com/facebook/create-react-app) ****
 * [Redux](https://redux.js.org/)
