@@ -18,10 +18,6 @@ React Intl has a set of React components that provide a declarative way to setup
 
 ## How does it work?
 
-```text
-s
-```
-
 1. Add node modules `react-intl` emo
 
    ```text
