@@ -56,8 +56,8 @@ React Intl has a set of React components that provide a declarative way to setup
            return import('./../compiled-lang/fr.json');
          case 'ro':
            return import('./../compiled-lang/ro.json');
-         case 'cn':
-           return import('./../compiled-lang/cn.json');
+         case 'zh':
+           return import('./../compiled-lang/zh.json');
          default:
            return import('./../compiled-lang/en.json');
        }
