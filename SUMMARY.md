@@ -5,6 +5,7 @@
 * [Prerequisites](prerequisites.md)
 * [Installation](installation.md)
 * [Authentication](authentication.md)
+* [Localization](localization.md)
 * [File Structure](file-structure.md)
 * [Routing](routing.md)
 * [Template Config](template-config.md)
