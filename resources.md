@@ -1,4 +1,4 @@
-# Resources\_old
+# Resources
 
 | Name | Info | Link |
 | :--- | :--- | :--- |

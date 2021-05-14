@@ -27,7 +27,7 @@ We’ve followed the best industry standards to make our product easy, fast & hi
 * CSS-in-JS
 * Multi-Language
 
-## Technology Stack
+## Credits
 
 * [React Hooks \(17.0.2\)](https://reactjs.org/docs/hooks-intro.html)
 * [Material UI v5](https://next.material-ui.com/)

@@ -8,8 +8,9 @@ Customize Material-UI with your theme. You can change the colors, the typography
 
 ## Theme configuration
 
-The Entire theme can be configured from the folder **`..\src\themes`** . Theme initialization starts in`index.js` , where palette, typography, and component's overridable style exist.
+The Entire theme can be configured from the folder **`..\src\themes`** . Theme initialization starts in**`index.js`** , where palette, typography, and component's overridable style exist.
 
+{% code title="index.js" %}
 ```javascript
 import {createTheme} from '@material-ui/core/styles';
 import value from '../assets/scss/_themes-vars.module.scss'; // central place for all colors
@@ -80,8 +81,9 @@ export function theme(customization) {
 export default theme;
 
 ```
+{% endcode %}
 
-As you can see colors for the theme came from the central location `import value from '../assets/scss/_themes-vars.module.scss';`
+As you can see colors for the theme came from the central location ``**`import value from '../assets/scss/_themes-vars.module.scss';`**
 
 ```css
 // Paper & Background Color
@@ -155,18 +157,19 @@ $textDarkTitle: #d7dcec;
 
 ```
 
-You can check other settings like theme typography, palette, and components style override in the same folder. `..src\themes`
+You can check other settings like theme typography, palette, and components style override in the same folder. **`..src\themes`**
 
 ### How to customize it?
 
-You might come across questions like how to change a theme's primary color? How to change textbox or other components which can apply to an entire theme? etc.  
+You might come across questions like how to change a theme's **primary** color? How to change textbox or other components which can apply to an entire theme?  
 
-#### Customize theme Colors
+#### Customize Theme Colors
 
 To change the color of the theme, you can either apply color directly to `..src\theme\palatte.js` **or** defines a new variable in `..src\assets\scss\_themes-vars.module.scss` and replace it in `palatte.js`
 
-For instance, you want to change color where `theme.palette.primary.light` is being used in a theme then, update following in `..src\themes\palatte.js`
+For instance, if you want to change color where `theme.palette.primary.light` is being used in a theme then, update following in **`..src\themes\palatte.js`**
 
+{% code title="palatter.js" %}
 ```javascript
 import value from '../assets/scss/_themes-vars.module.scss';
 
@@ -187,13 +190,15 @@ export function themePalatte(theme) {
 }
 
 ```
+{% endcode %}
 
-#### Customize theme Typography
+#### Customize Theme Typography
 
 You can customize the typography used in the theme as well from the central place.
 
-For instance, you want to change `font-weight` of the typography `h5` to `900` which is set `500` in theme. To do that, open `..src\themes\typography.js` and update as below:
+For instance, If you want to change `font-weight` of the typography `h5` to `900`. To do that, open **`..src\themes\typography.js`** and update as below:
 
+{% code title="typography.js" %}
 ```javascript
 /**
  * Typography used in theme
@@ -210,15 +215,17 @@ export function themeTypography(theme) {
 }
 
 ```
+{% endcode %}
 
-This will apply to all places where you used Typography variant as `h5`
+This will apply to all places where you used Typography variant as **`h5`**
 
 **`<Typography variant="h5"...>`**
 
 #### Customize MUI Component style
 
-We provided a central location to override any default style of any component. All the overrides style exist in `src\themes\compStyleOverride.js`
+We have provided a central location to override any default style of any component. All the overrides style exist in **`src\themes\compStyleOverride.js`**
 
+{% code title="compStyleOverride.js" %}
 ```javascript
 import value from '../assets/scss/_themes-vars.module.scss';
 
@@ -249,6 +256,7 @@ export function componentStyleOverrides(theme) {
 }
 
 ```
+{% endcode %}
 
 You can add default property for any MUI component and it will be applied everywhere. We emitted lines to view it better in the above code block but you can see many controls' styles override in the same file. Feel free to change it as per your need.
 

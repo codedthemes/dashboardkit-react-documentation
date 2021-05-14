@@ -1,5 +1,5 @@
 ---
-description: Configuration option for entire them
+description: Configuration option for whole Berry Template
 ---
 
 # Project Configuration

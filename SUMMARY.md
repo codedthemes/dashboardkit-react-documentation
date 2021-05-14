@@ -11,10 +11,7 @@
 * [Routing](routing.md)
 * [Project Configuration](project-config.md)
 * [Theme/Style Configuration](theme-config.md)
+* [Resources](resources.md)
 * [Support](support.md)
 * [Changelog](changelog.md)
-* [Color Management\_old](color-management.md)
-* [Getting Started-old](getting-started-old.md)
-* [Resources\_old](resources.md)
-* [Layout Option\_old](layout-option.md)
 
