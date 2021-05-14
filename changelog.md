@@ -1,14 +1,10 @@
+---
+description: Defines change log
+---
+
 # Changelog
 
-## V4.11.1 - Features 
+## v1.0 - Release \(15-05-2021\)
 
-* RTL
-* Full Calendar
-* Multi Language support
-
-> Release Date: 16-Apr-2021
-
-## v1.0 - Release
-
-* Initial release.
+* Berry initial release
 

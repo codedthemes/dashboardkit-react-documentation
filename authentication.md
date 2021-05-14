@@ -1,30 +1,32 @@
 ---
-description: Materially supports 3 popular Authentication methods.
+description: 'Auth0, JWT, Firebase setup'
 ---
 
 # Authentication
 
-Materially supports 3 authentication methods:  **Firebase Authentication, JSON Web Token, Auth0**.
+Berry supports three Authentication methods  **`Firebase, JSON Web Token (JWT), Auth0.`**
 
-**FYI** - We provide Firebase Authentication by default.
+{% hint style="info" %}
+Firebase Authentication set by default
+{% endhint %}
 
 ## How does it work?
 
 Only authenticated users can access dashboard pages. If a user is not authenticated, the user redirected to the login page.
 
-We implemented to make this work the “Guard” concept from Angular. It is simply a component that wraps a route and checks for user authentication status before allowing the navigation. 
+We used two guards **`GuestGuard`** and **`AuthGuard`** . Guards have been configured in **`src\utils\route-guard\`**  folder.
 
-We used two guards **GuestGuard** and **AuthGuard**, To find more information about guards, please visit the **Routes.js** page.
+In the **`src/layout/App.js`**, we have specified auth provider **`FirebaseProvider`** like,
 
- In the `src/layout/App.js`,  we have specified  auth provider **FirebaseProvider** like,
-
-```text
+{% code title="App.js" %}
+```javascript
 import { FirebaseProvider } from "../contexts/FirebaseContext";
 ```
+{% endcode %}
 
-App component wrap with the provider, like
+App component wrap with the **`<FirebaseProvider>`**
 
-```text
+```javascript
 <ThemeProvider theme={theme(customization)}>
   <FirebaseProvider>
     <Routes />
@@ -33,7 +35,7 @@ App component wrap with the provider, like
 </ThemeProvider>
 ```
 
- Using **FirebaseProvider**, we can use the context directly by importing `useContext` from React and specifying the context **FirebaseContext** that we want to use or we can use the custom hook **`useAuth`** from `src/hooks/useAuth.js`
+Using **`<FirebaseProvider>`**, we can use the context directly by importing **`useContext`** from React and specifying the context **`FirebaseContext`** or we can use the custom hook **`useAuth`** from `src/hooks/useAuth.js`
 
 ## Auth Configuration:
 
@@ -41,7 +43,8 @@ App component wrap with the provider, like
 You can edit this file at **`[ ../src/config.js]`**
 {% endhint %}
 
-```text
+{% code title="config.js" %}
+```javascript
 // JWT JSON Web Token method
 jwt: {
     secret: 'SECRET-KEY',
@@ -66,99 +69,137 @@ auth0: {
     domain: 'DOMAIN'
 }
 ```
-
-###  <a id="switching-between-auth-methods"></a>
+{% endcode %}
 
 ## Switching between Authentication methods
 
 ### **Firebase to JWT**
 
-**Set JWT Config** - Open file '**config.js**' at directory '../src/config.js' and set **jwt** configuration.
+**Set JWT Config**
 
-```text
-export default {
-	...
-	jwt: {
+Open file **`config.js`** from directory **`..\src\config.js`** and set **`jwt`**  configuration.
+
+{% code title="config.js" %}
+```javascript
+...
+  jwt: {
       secret: 'SECRET-KEY',
       timeout: '1 days'
   }
-}
+...
 ```
+{% endcode %}
 
-**Change Login Form** - Open file '**index.js**' at directory '../src/views/Login/index.js', and use the **JWTLogin** component.
+**Change Login Form**
 
-```text
+Open file **`index.js`**  at directory **`..\src\views\pages\authentication\login\index.js`** and use the **`JWTLogin`** component.
+
+{% code title="login\\index.js" %}
+```javascript
 // Replace at line 8:
 import JWTLogin from './JWTLogin';
 
-// Replace at line 21: 
-<JWTLogin />
+
+// Also find & edit below code block
+<Grid item xs={12}>
+    <JWTLogin />
+    {/* <Auth0Login /> */}
+    {/* <FirebaseLogin /> */}
+</Grid>
 ```
+{% endcode %}
 
-**AuthProvider for Layout** - Open file '**App.js**' at directory '../src/layout/App.js' and use **JWTProvider**
+**Change AuthProvider**
 
-```text
-// Replace at line 6;
+Open file **`App.js`** at directory **`..\src\App.js`** and use **`JWTProvider`**
+
+{% code title="App.js" %}
+```javascript
+// Replace at line 6:
 import { JWTProvider } from "./contexts/JWTContext";
 
-// Replace from line 22:
+// Also find & edit below code block
 <JWTProvider>
     <Routes />
     <Snackbar />
 </JWTProvider>
 ```
+{% endcode %}
 
- **Change auth Hooks** - Open file '**useAuth.js**' at directory '../src/hooks/useAuth.js' and use **JWTContext**
+**Change auth Hooks**
 
-```text
+Open file **`useAuth.js`** at directory `..\src\hooks\useAuth.js` and use **`JWTContext`**
+
+{% code title="useAuth.js" %}
+```javascript
 // Replace from line 2:
 import JWTContext from '../contexts/JWTContext';
 const useAuth = () => useContext(JWTContext);
 ```
-
-### \*\*\*\*
+{% endcode %}
 
 ### **Firebase to Auth0**
 
-**Set Auth Config** - Open file '**config.js**' at directory '../src/config.js' and set **auth0** configuration.
+**Set Auth0 Config**
 
-```text
-export default {
-	...
-	auth0: {
-		client_id: 'CLIENT-ID',
-		domain: 'DOMAIN'
+Open file **`config.js`** from directory **`..\src\config.js`** and set **`jwt`**  configuration.
+
+{% code title="config.js" %}
+```javascript
+...
+  auth0: {
+      client_id: 'client_id',
+      domain: 'yourdomain.com'
   }
-}
+...
 ```
+{% endcode %}
 
-**Change Login Form** - Open file '**index.js**' at directory '../src/views/Login//index.js', and use **Auth0Login** component.
+**Change Login Form**
 
-```text
+Open file **`index.js`**  at directory **`..\src\views\pages\authentication\login\index.js`** and use the **`Auth0Login`** component.
+
+{% code title="\\login\\index.js" %}
+```javascript
 // Replace at line 8:
 import Auth0Login from './Auth0Login';
 
-// Replace at line 21: 
-<Auth0Login />
+
+// Also find & edit below code block
+<Grid item xs={12}>
+    {/* <JWTLogin /> */}
+    <Auth0Login />
+    {/* <FirebaseLogin /> */}
+</Grid>
 ```
+{% endcode %}
 
-**AuthProvider for Layout** - Open file '**App.js**' at directory '../src/layout/App.js' and use **Auth0Provider**
+**Change AuthProvider**
 
-```text
-// Replace at line 6;
-import { Auth0Provider } from "./contexts/Auth0Context";
+Open file **`App.js`** at directory **`..\src\App.js`** and use **`Auth0Provider`**
 
-// Replace from line 22:
+{% code title="App.js" %}
+```javascript
+// Replace at line 6:
+import {Auth0Provider} from "./contexts/Auth0Context";
+
+// Also find & edit below code block
 <Auth0Provider>
-    {renderRoutes(routes)}
+    <Routes />
+    <Snackbar />
 </Auth0Provider>
 ```
+{% endcode %}
 
- **Change auth Hooks** - Open file '**useAuth.js**' at directory '../src/hooks/useAuth.js' and use **Auth0Context**
+**Change auth Hooks**
 
-```text
+Open file **`useAuth.js`** at directory **`..\src\hooks\useAuth.js`** and use **`Auth0Context`**
+
+{% code title="useAuth.js" %}
+```javascript
 // Replace from line 2:
 import Auth0Context from '../contexts/Auth0Context';
 const useAuth = () => useContext(Auth0Context);
 ```
+{% endcode %}
 

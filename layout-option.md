@@ -1,6 +1,4 @@
-# Layout Option
-
-
+# Layout Option\_old
 
 {% hint style="info" %}
 You can edit this file at **`[ ../src/config.js]`**
@@ -17,6 +15,4 @@ You can edit this file at **`[ ../src/config.js]`**
 * theme: `dark`
 {% endtab %}
 {% endtabs %}
-
-
 

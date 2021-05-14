@@ -1,44 +1,43 @@
 ---
-description: Materially Documentation - ReactJS + Material UI Admin Template
+description: Berry - React Admin Template Documentation
 ---
 
 # Welcome
 
-## ABOUT DOCS
+## ABOUT BERRY
 
-**Materially** is the most developer-friendly & highly customizable React **Hooks** + Redux with **Material UI**
+![](.gitbook/assets/og-berry-admin-template.png)
 
-We’ve followed the best industry standards to make our product easy, fast & highly scalable to work with. Materially is the most convenient react hooks admin dashboard template for developers as it's made with React Hooks, Components, Create React App, Redux, clean code, and fully documented which allows you to build eye-catching, high-quality, high-performance responsive single-page applications.
+[Berry](https://berrydashboard.io) is the most `developer-friendly` & highly customizable React Admin Template based on [Material-UI](http://material-ui.com/).
 
-## Features
+Berry comes with plenty of ready-to-use Material-UI components that will help you to build your site faster and saves your development time.
 
-* Material UI
-* React Hooks
-* Thir-Party Authentication
-* Fully Responsive Layout 
-* Dashboard, **380+ Widget** Cards
-* JSS Powered
-* **75+ Pages**
-* Live Menu Customize
-* 6 months of free support included
-* Easy to Build and Setup
-* Clear Cut Code style
+We’ve followed the best industry standards to make our product easy, fast & highly scalable to work with. It's made with this high-end technology stack - React Hooks, Components, Create React App & Redux.
 
-## Technical Specification  \(Credits 🙏\)
+## Technology Stack
 
-* React Hooks \(**17.0.1**\)
-* [Material UI](https://material-ui.com/) \(4.11.0\)
-* SASS with JSS Powered
-* \*\*\*\*[Create React App](https://github.com/facebook/create-react-app) ****
+* Material-UI v5 components library
+* Authentication Methods - Auth0, Firebase, JWT
+* React Hooks API
+* Redux & React Context API for State Management
+* React Router
+* Axios
+* Create React App
+* Code Splitting
+* CSS-in-JS
+* Multi-Language
+
+## Technology Stack
+
+* [React Hooks \(17.0.2\)](https://reactjs.org/docs/hooks-intro.html)
+* [Material UI v5](https://next.material-ui.com/)
+* [Create React App](https://github.com/facebook/create-react-app)
 * [Redux](https://redux.js.org/)
 * [React Router](https://github.com/ReactTraining/react-router) 
-* [Firebase](https://firebase.google.com/docs/auth)
-* [Auth0](https://auth0.com/)
-* [JWT](https://jwt.io/)
+* [Firebase](https://firebase.google.com/docs/auth), [Auth0](https://auth0.com/), [JWT](https://jwt.io/)
+* [Google Fonts](https://fonts.google.com/)
 
 ## Any Suggestion? OR Feedback
 
-If you have any suggestions regarding “How To” recipes that should be on this page, Let’s know. We always appreciate your feedback.
-
-Reach us at codedthemes\[at\].gmail\[dot\]com
+Feedback from our beloved community is always welcome. Feel free to reach out anytime at our [Support Panel.](https://codedthemes.support-hub.io) We would love to hear from you anytime.
 
