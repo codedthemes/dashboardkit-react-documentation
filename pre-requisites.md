@@ -4,6 +4,8 @@ description: Pre Requisites needed to run and build berry
 
 # Pre-requisites
 
+[https://www.youtube.com/embed/OMnzf4OHlOw](https://youtu.be/aiZ9sQ-r3dE)
+
 {% hint style="warning" %}
 You don’t need to install or configure tools like Webpack or Babel. They are configured and hidden so that you can focus on the code.
 {% endhint %}
