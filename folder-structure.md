@@ -6,7 +6,9 @@ description: >-
 
 # Folder Structure
 
-## Project structure
+{% embed url="https://youtu.be/IJ\_zQlPZvZ4?list=PLknn3jaIuWiDKKEy3EO-p5-MP1nSOgUr1" caption="Folder Structure" %}
+
+> If you prefer reading docs, continue reading below instead watching video.
 
 Under **`berry-material-react/`** directory, You will find following folder structure.
 

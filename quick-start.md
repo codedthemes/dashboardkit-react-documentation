@@ -4,6 +4,10 @@ description: Quick start your project using Berry.
 
 # Quick Start
 
+{% embed url="https://youtu.be/u7xAjqjp4fU?list=PLknn3jaIuWiDKKEy3EO-p5-MP1nSOgUr1" caption="Build and deploy berry" %}
+
+> If you prefer reading docs, continue reading below instead watching video.
+
 ### Installation
 
 Navigate to your root folder **`(i.e. berry-material-react)`**
