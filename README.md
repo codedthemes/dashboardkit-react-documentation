@@ -2,7 +2,7 @@
 description: Berry - React Admin Template Documentation
 ---
 
-# Welcome
+# Documentation
 
 ## ABOUT BERRY
 

@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Welcome](README.md)
+* [Documentation](README.md)
 * [Pre-requisites](pre-requisites.md)
 * [Quick Start](quick-start.md)
 * [Folder Structure](folder-structure.md)
