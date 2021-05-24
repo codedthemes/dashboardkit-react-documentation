@@ -12,6 +12,7 @@
 * [Project Configuration](project-config.md)
 * [Theme/Style Configuration](theme-config.md)
 * [Resources](resources.md)
+* [RoadMap](roadmap.md)
 * [Support](support.md)
 * [Changelog](changelog.md)
 
