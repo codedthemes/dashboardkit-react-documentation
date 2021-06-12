@@ -4,11 +4,11 @@ description: Defines core of theme. How theme is being set using Material-UI.
 
 # Theme/Style Configuration
 
-Customize Berry with your theme. You can change the colors, the typography, and much more. Material-UI provides flexibility to change the style of the project in a single place and on top of it, we made it more centralize and consistent by proper file structure.
+Customize Material-UI with your theme. You can change the colors, the typography, and much more. Material-UI provides flexibility to change the style of the project in a single place and on top of it, we made it more centralize and consistent by proper file structure.
 
 ## Theme configuration
 
-The whole theme can be configured from the folder **`..\src\themes`** . Theme initialization starts in**`index.js`** , where palette, typography, and component's overridable style exist.
+The Entire theme can be configured from the folder **`..\src\themes`** . Theme initialization starts in**`index.js`** , where palette, typography, and component's overridable style exist.
 
 {% code title="index.js" %}
 ```javascript

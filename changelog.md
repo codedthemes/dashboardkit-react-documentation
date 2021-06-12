@@ -4,7 +4,7 @@ description: Defines change log
 
 # Changelog
 
-## v1.1.0 - \(28-05-2021\)
+## v1.1.0 - Release Soon
 
 * More closer to the single responsibility model
 * Added propTypes declaration for components which helps in the development
