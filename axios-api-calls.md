@@ -6,7 +6,7 @@ description: Mock API calls
 
 ## Mock Calls
 
-Berry uses fack/mock data to render some pages and actions. Mocking has been achieved with help of Axios. It helps users to do minimal changes to load live data. Users just need to change the mock API URL to the Live service URL. 
+DashboardKit uses fack/mock data to render some pages and actions. Mocking has been achieved with help of Axios. It helps users to do minimal changes to load live data. Users just need to change the mock API URL to the Live service URL.
 
 ### How does it work?
 
@@ -15,6 +15,7 @@ Axios has been configured in the folder **`..src\utils\axios.js`**
 To use Axios on a page, you need to import it and make a call. After that, you need to make calls to Axios using **`axios.get('path')`** `or` **`axios.post('path')`** see below implementation.
 
 {% code title="axios.js" %}
+
 ```javascript
 ...
 import axios from '../../../../utils/axios'; // 1. import axios
@@ -22,53 +23,55 @@ import axios from '../../../../utils/axios'; // 1. import axios
 
 const CardListPage = () => {
     const [data, setData] = React.useState([]);
-    
+
     ...
     ...
-    
+
     // get dummy data
     const getData = async () => {
         const response = await axios.get('/api/chat/users'); // 2. change it to live service URL
         setData(response.data.users);
         return response.data.users;
     };
-   
+
     ...
     ...
-    
+
     // 3. call to get data
     React.useEffect(() => {
         getData();
     }, []);
-    
+
     ...
     ...
-    
+
     // use data in HTML
     {Object.keys(data).map((key, index) => {
         return (
             <React.Fragment key={index}>
-            
+
             ...
             ...
-            
+
             </React.Fragment>
             );
     ...
     ...
-    
+
         })
     };
-    
+
 };
 
 export default SamplePage;
 ```
+
 {% endcode %}
 
-Berry has all dummy data in folder **`src\_mockApis.`** For API, **`api/chat/users`**, following data configured in **`..\src_mockApis\chat\index.js`** :
+DashboardKit has all dummy data in folder **`src\_mockApis.`** For API, **`api/chat/users`**, following data configured in **`..\src_mockApis\chat\index.js`** :
 
 {% code title="\\chat\\index.js" %}
+
 ```javascript
 import services from './../../utils/mockAdapter';
 
@@ -121,7 +124,7 @@ services.onGet('/api/chat/users').reply(200, {users: users});
 });
 
 ```
+
 {% endcode %}
 
-You can configure the same for `post`methods as well. 
-
+You can configure the same for `post`methods as well.

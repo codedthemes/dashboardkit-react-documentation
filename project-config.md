@@ -1,10 +1,10 @@
 ---
-description: Configuration option for whole Berry Template
+description: Configuration option for whole DashboardKit Template
 ---
 
 # Project Configuration
 
-Berry has a single source of truth for default configuration which lets users manage it effectively. It also makes it scalable for new configurations. you can set config like font, border, theme layout, locale, etc. All those can be configured at **`..src/config.js`**
+DashboardKit has a single source of truth for default configuration which lets users manage it effectively. It also makes it scalable for new configurations. you can set config like font, border, theme layout, locale, etc. All those can be configured at **`..src/config.js`**
 
 <table>
   <thead>
@@ -112,39 +112,39 @@ Berry has a single source of truth for default configuration which lets users ma
 
 {% tabs %}
 {% tab title="config.js" %}
+
 ```javascript
 const config = {
-    // basename: only at build time to set, and don't add '/' at end off BASENAME for breadcrumbs,  like '/berry-material-react/react/default'
-    basename: '/',
-    defaultPath: '/dashboard/default',
-    fontFamily: `'Roboto', sans-serif`,
-    borderRadius: 12,
-    outlinedFilled: true,
-    theme: 'light',
-    i18n: 'en', // 'en' - English, 'fr' - French, 'ro' - Romanian, 'zh' - Chinese
-    rtlLayout: false,
-    jwt: {
-        secret: 'SECRET-KEY',
-        timeout: '1 days'
-    },
-    firebase: {
-        apiKey: 'apiKey',
-        authDomain: 'authDomain',
-        projectId: 'berry-material-react',
-        storageBucket: 'berry-material-react.appspot.com',
-        messagingSenderId: 'messagingSenderId',
-        appId: 'appId',
-        measurementId: 'measurementId'
-    },
-    auth0: {
-        client_id: 'client_id',
-        domain: 'demo-localhost.us.auth0.com'
-    }
+  // basename: only at build time to set, and don't add '/' at end off BASENAME for breadcrumbs,  like '/DashboardKit-material-react/react/default'
+  basename: "/",
+  defaultPath: "/dashboard/default",
+  fontFamily: `'Roboto', sans-serif`,
+  borderRadius: 12,
+  outlinedFilled: true,
+  theme: "light",
+  i18n: "en", // 'en' - English, 'fr' - French, 'ro' - Romanian, 'zh' - Chinese
+  rtlLayout: false,
+  jwt: {
+    secret: "SECRET-KEY",
+    timeout: "1 days",
+  },
+  firebase: {
+    apiKey: "apiKey",
+    authDomain: "authDomain",
+    projectId: "DashboardKit-material-react",
+    storageBucket: "DashboardKit-material-react.appspot.com",
+    messagingSenderId: "messagingSenderId",
+    appId: "appId",
+    measurementId: "measurementId",
+  },
+  auth0: {
+    client_id: "client_id",
+    domain: "demo-localhost.us.auth0.com",
+  },
 };
 
 export default config;
-
 ```
+
 {% endtab %}
 {% endtabs %}
-

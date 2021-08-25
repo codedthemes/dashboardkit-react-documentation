@@ -1,10 +1,10 @@
 ---
-description: 'Auth0, JWT, Firebase setup'
+description: "Auth0, JWT, Firebase setup"
 ---
 
 # Authentication
 
-Berry supports three Authentication methods  **`Firebase, JSON Web Token (JWT), Auth0.`**
+DashboardKit supports three Authentication methods **`Firebase, JSON Web Token (JWT), Auth0.`**
 
 {% hint style="info" %}
 Firebase Authentication set by default
@@ -14,14 +14,16 @@ Firebase Authentication set by default
 
 Only authenticated users can access dashboard pages. If a user is not authenticated, the user redirected to the login page.
 
-We used two guards **`GuestGuard`** and **`AuthGuard`** . Guards have been configured in **`src\utils\route-guard\`**  folder.
+We used two guards **`GuestGuard`** and **`AuthGuard`** . Guards have been configured in **`src\utils\route-guard\`** folder.
 
 In the **`src/layout/App.js`**, we have specified auth provider **`FirebaseProvider`** like,
 
 {% code title="App.js" %}
+
 ```javascript
 import { FirebaseProvider } from "../contexts/FirebaseContext";
 ```
+
 {% endcode %}
 
 App component wrap with the **`<FirebaseProvider>`**
@@ -44,6 +46,7 @@ You can edit this file at **`[ ../src/config.js]`**
 {% endhint %}
 
 {% code title="config.js" %}
+
 ```javascript
 // JWT JSON Web Token method
 jwt: {
@@ -69,6 +72,7 @@ auth0: {
     domain: 'DOMAIN'
 }
 ```
+
 {% endcode %}
 
 ## Switching between Authentication methods
@@ -77,9 +81,10 @@ auth0: {
 
 **Set JWT Config**
 
-Open file **`config.js`** from directory **`..\src\config.js`** and set **`jwt`**  configuration.
+Open file **`config.js`** from directory **`..\src\config.js`** and set **`jwt`** configuration.
 
 {% code title="config.js" %}
+
 ```javascript
 ...
   jwt: {
@@ -88,25 +93,27 @@ Open file **`config.js`** from directory **`..\src\config.js`** and set **`jwt`*
   }
 ...
 ```
+
 {% endcode %}
 
 **Change Login Form**
 
-Open file **`index.js`**  at directory **`..\src\views\pages\authentication\login\index.js`** and use the **`JWTLogin`** component.
+Open file **`index.js`** at directory **`..\src\views\pages\authentication\login\index.js`** and use the **`JWTLogin`** component.
 
 {% code title="login\\index.js" %}
+
 ```javascript
 // Replace at line 8:
-import JWTLogin from './JWTLogin';
-
+import JWTLogin from "./JWTLogin";
 
 // Also find & edit below code block
 <Grid item xs={12}>
-    <JWTLogin />
-    {/* <Auth0Login /> */}
-    {/* <FirebaseLogin /> */}
-</Grid>
+  <JWTLogin />
+  {/* <Auth0Login /> */}
+  {/* <FirebaseLogin /> */}
+</Grid>;
 ```
+
 {% endcode %}
 
 **Change AuthProvider**
@@ -114,16 +121,18 @@ import JWTLogin from './JWTLogin';
 Open file **`App.js`** at directory **`..\src\App.js`** and use **`JWTProvider`**
 
 {% code title="App.js" %}
+
 ```javascript
 // Replace at line 6:
 import { JWTProvider } from "./contexts/JWTContext";
 
 // Also find & edit below code block
 <JWTProvider>
-    <Routes />
-    <Snackbar />
-</JWTProvider>
+  <Routes />
+  <Snackbar />
+</JWTProvider>;
 ```
+
 {% endcode %}
 
 **Change auth Hooks**
@@ -131,20 +140,23 @@ import { JWTProvider } from "./contexts/JWTContext";
 Open file **`useAuth.js`** at directory `..\src\hooks\useAuth.js` and use **`JWTContext`**
 
 {% code title="useAuth.js" %}
+
 ```javascript
 // Replace from line 2:
-import JWTContext from '../contexts/JWTContext';
+import JWTContext from "../contexts/JWTContext";
 const useAuth = () => useContext(JWTContext);
 ```
+
 {% endcode %}
 
 ### **Firebase to Auth0**
 
 **Set Auth0 Config**
 
-Open file **`config.js`** from directory **`..\src\config.js`** and set **`jwt`**  configuration.
+Open file **`config.js`** from directory **`..\src\config.js`** and set **`jwt`** configuration.
 
 {% code title="config.js" %}
+
 ```javascript
 ...
   auth0: {
@@ -153,25 +165,27 @@ Open file **`config.js`** from directory **`..\src\config.js`** and set **`jwt`*
   }
 ...
 ```
+
 {% endcode %}
 
 **Change Login Form**
 
-Open file **`index.js`**  at directory **`..\src\views\pages\authentication\login\index.js`** and use the **`Auth0Login`** component.
+Open file **`index.js`** at directory **`..\src\views\pages\authentication\login\index.js`** and use the **`Auth0Login`** component.
 
 {% code title="\\login\\index.js" %}
+
 ```javascript
 // Replace at line 8:
-import Auth0Login from './Auth0Login';
-
+import Auth0Login from "./Auth0Login";
 
 // Also find & edit below code block
 <Grid item xs={12}>
-    {/* <JWTLogin /> */}
-    <Auth0Login />
-    {/* <FirebaseLogin /> */}
-</Grid>
+  {/* <JWTLogin /> */}
+  <Auth0Login />
+  {/* <FirebaseLogin /> */}
+</Grid>;
 ```
+
 {% endcode %}
 
 **Change AuthProvider**
@@ -179,16 +193,18 @@ import Auth0Login from './Auth0Login';
 Open file **`App.js`** at directory **`..\src\App.js`** and use **`Auth0Provider`**
 
 {% code title="App.js" %}
+
 ```javascript
 // Replace at line 6:
-import {Auth0Provider} from "./contexts/Auth0Context";
+import { Auth0Provider } from "./contexts/Auth0Context";
 
 // Also find & edit below code block
 <Auth0Provider>
-    <Routes />
-    <Snackbar />
-</Auth0Provider>
+  <Routes />
+  <Snackbar />
+</Auth0Provider>;
 ```
+
 {% endcode %}
 
 **Change auth Hooks**
@@ -196,10 +212,11 @@ import {Auth0Provider} from "./contexts/Auth0Context";
 Open file **`useAuth.js`** at directory **`..\src\hooks\useAuth.js`** and use **`Auth0Context`**
 
 {% code title="useAuth.js" %}
+
 ```javascript
 // Replace from line 2:
-import Auth0Context from '../contexts/Auth0Context';
+import Auth0Context from "../contexts/Auth0Context";
 const useAuth = () => useContext(Auth0Context);
 ```
-{% endcode %}
 
+{% endcode %}

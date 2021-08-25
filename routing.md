@@ -4,7 +4,7 @@ description: Page and URL routing
 
 # Routing
 
-Berry routing system is based on [react-router](https://reacttraining.com/react-router/) and its package [react-router-dom,](https://reacttraining.com/react-router/web/guides/quick-start) it's also using code splitting for better performance.
+DashboardKit routing system is based on [react-router](https://reacttraining.com/react-router/) and its package [react-router-dom,](https://reacttraining.com/react-router/web/guides/quick-start) it's also using code splitting for better performance.
 
 {% hint style="info" %}
 **How can I add a new page with a menu item?**
@@ -18,57 +18,58 @@ Open**`...\src\routes\index.js`**You will find the below example code. In the be
 
 {% tabs %}
 {% tab title="\\routes\\index.js" %}
+
 ```javascript
-import React, {Suspense} from 'react';
-import {Redirect, Switch} from 'react-router-dom';
-import {AnimatePresence} from 'framer-motion';
+import React, { Suspense } from "react";
+import { Redirect, Switch } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
-import config from './../config';
-import MainRoutes from './MainRoutes';
-import LoginRoutes from './LoginRoutes';
+import config from "./../config";
+import MainRoutes from "./MainRoutes";
+import LoginRoutes from "./LoginRoutes";
 
-import Loader from '../ui-component/extended/Loader/Loader';
+import Loader from "../ui-component/extended/Loader/Loader";
 
-import AuthenticationRoutes from './AuthenticationRoutes';
-import DocsRoutes from './DocsRoutes';
+import AuthenticationRoutes from "./AuthenticationRoutes";
+import DocsRoutes from "./DocsRoutes";
 
 const Routes = () => {
-    return (
-        <AnimatePresence>
-            <Suspense fallback={<Loader />}>
-                <Switch>
-                    <Redirect exact from="/" to={config.defaultPath} />
-                    <>
-                        {/* Routes for authetication pages */}
-                        <AuthenticationRoutes />
+  return (
+    <AnimatePresence>
+      <Suspense fallback={<Loader />}>
+        <Switch>
+          <Redirect exact from="/" to={config.defaultPath} />
+          <>
+            {/* Routes for authetication pages */}
+            <AuthenticationRoutes />
 
-                        {/* Routes for documentation pages */}
-                        <DocsRoutes />
+            {/* Routes for documentation pages */}
+            <DocsRoutes />
 
-                        {/* Route for login */}
-                        <LoginRoutes />
+            {/* Route for login */}
+            <LoginRoutes />
 
-                        {/* Routes for main layouts */}
-                        <MainRoutes />
-                    </>
-                </Switch>
-            </Suspense>
-        </AnimatePresence>
-    );
+            {/* Routes for main layouts */}
+            <MainRoutes />
+          </>
+        </Switch>
+      </Suspense>
+    </AnimatePresence>
+  );
 };
 
 export default Routes;
-
-
 ```
+
 {% endtab %}
 {% endtabs %}
 
 ### Add New menu/route in the main layout
 
-To add one more menu item in ``**`<MainRoutes />`**, update the following file at the same location **`...\src\routes\MainRoutes.js`**
+To add one more menu item in ``**`<MainRoutes />`**, update the following file at the same location **`...\src\routes\MainRoutes.js`\*\*
 
 {% code title="MainRoutes.js" %}
+
 ```javascript
 ...
 ...
@@ -84,7 +85,7 @@ const MainRoutes = () => {
             path={[
                 ...
                 ...
-                '/sample-page', 
+                '/sample-page',
                 '/new-menu' // add new path like this
             ]}
         >
@@ -95,7 +96,7 @@ const MainRoutes = () => {
                         ...
                         <Route path="/sample-page" component={SamplePage} />
                         // add new route after this. like below
-                        <Route path="/new-menu" component={NewMenu} />                        
+                        <Route path="/new-menu" component={NewMenu} />
                     </AuthGuard>
                 </Switch>
             </MainLayout>
@@ -106,9 +107,9 @@ const MainRoutes = () => {
 export default MainRoutes;
 
 ```
+
 {% endcode %}
 
 {% hint style="warning" %}
 Any route added in **`<MainLayout>`** will automatically go through**`<AuthGuard>`**
 {% endhint %}
-

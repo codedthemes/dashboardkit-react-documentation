@@ -10,12 +10,13 @@ description: >-
 
 > If you prefer reading docs, continue reading below instead watching video.
 
-Under **`berry-material-react/`** directory, You will find following folder structure.
+Under **`DashboardKit-material-react/`** directory, You will find following folder structure.
 
 {% tabs %}
 {% tab title="Folder Structure" %}
+
 ```javascript
-berry-material-react
+DashboardKit-material-react
 ..
 ├── package.json           -> Package json file.
 ├── public
@@ -45,9 +46,9 @@ berry-material-react
 │   │   ├── route-guard    -> Auth guard to prevent unexpected navigations
 │   └── views              -> View files for all pages
 ├── App.js                 -> starting point of application
-├── config.js              -> Template constant value and live customization  
+├── config.js              -> Template constant value and live customization
 ├── index.js               -> Application root js file
 ```
+
 {% endtab %}
 {% endtabs %}
-

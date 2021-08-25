@@ -1,5 +1,5 @@
 ---
-description: Pre Requisites needed to run and build berry
+description: Pre Requisites needed to run and build DashboardKit
 ---
 
 # Pre-requisites
@@ -14,9 +14,9 @@ You don’t need to install or configure tools like Webpack or Babel. They are c
 
 ## **Pre-requisites**
 
-Berry is based on `node` and `create-react script`. Please check the following **prerequisites** before jump on it.
+DashboardKit is based on `node` and `create-react script`. Please check the following **prerequisites** before jump on it.
 
-**Node** is the primary prerequisite for Berry. Open your command terminal and check using the **`node -v`** command
+**Node** is the primary prerequisite for DashboardKit. Open your command terminal and check using the **`node -v`** command
 
 ```bash
 c:\> node -v
@@ -41,4 +41,3 @@ operable program or batch file.
 ```
 
 Please install it using this [link](https://yarnpkg.com/getting-started/install) as it does not come with **Node** automatically.
-
