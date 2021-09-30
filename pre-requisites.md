@@ -34,3 +34,7 @@ operable program or batch file.
 
 Please install it using this [link](https://yarnpkg.com/getting-started/install) as it does not come with **Node** automatically.
 
+{% hint style="success" %}
+We used yarn as command for everyone and will also recommend same.
+{% endhint %}
+

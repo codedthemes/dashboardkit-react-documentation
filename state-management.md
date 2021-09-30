@@ -20,9 +20,9 @@ On top of that, it provides a great developer experience.
 
 ## Redux-Saga
 
- `redux-saga` is a library that aims to make application side effects \(i.e. asynchronous things like data fetching and impure things like accessing the browser cache\) easier to manage, more efficient to execute, easy to test, and better at handling failures. Sagas enable numerous approaches to tackling parallel execution, task concurrency, task racing, task cancellation, and more. Keep total control over the flow of your code.
+Redux-saga library aims to make application side effects \(i.e. asynchronous things like data fetching and impure things like accessing the browser cache\) easier to manage, more efficient to execute, easy to test, and better at handling failures. Sagas enable numerous approaches to tackling parallel execution, task concurrency, task racing, task cancellation, and more. Keep total control over the flow of your code.
 
-Dashboard-Kit uses redux-saga as middleware to manage many things. It helps you to manage code efficient.
+Dashboard-Kit uses redux-saga as middleware to manage many things. There are 6 sagas in application for each app in theme.
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -82,7 +82,7 @@ The root Redux state value is almost always a plain JS object, with other data n
 
 Based on this information, we should now be able to describe the kinds of values we need to have inside our Redux state.
 
-As we are using redux-saga, state get auto update from saga once reponse received.
+As we are using redux-saga, the state gets an auto-update from saga once the reponse is received.
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -99,22 +99,13 @@ export const initialState = {
 
 {% tab title="TypeScript" %}
 ```typescript
-function* workerFetchLeaveList(action: ReducerAction) {
-    try {
-        const response: AxiosResponse<Array<Result>> = yield call(getLeaves);
-
-        // update state on response
-        yield put({
-            type: FETCH_LEAVE_LIST_SUCCESS,
-            payload: response.data || []
-        });
-    } catch (error) {
-        yield put({
-            type: FETCH_LEAVE_LIST_ERROR,
-            error
-        });
-    }
-}
+export const initialState = {
+    isOpen: 'dashboard', //for active default menu
+    navType: config.theme,
+    locale: config.i18n,
+    rtlLayout: false, // rtlLayout: config.rtlLayout,
+    opened: true
+};
 ```
 {% endtab %}
 {% endtabs %}
@@ -140,33 +131,26 @@ Based on that list of things that can happen, we can create a list of actions th
 {% tabs %}
 {% tab title="JavaScript" %}
 ```javascript
-export const LOGIN = 'LOGIN';
-export const LOGOUT = 'LOGOUT';
-export const MENU_OPEN = '@customization/MENU_OPEN';
-export const MENU_TYPE = '@customization/MENU_TYPE';
-export const THEME_LOCALE = '@customization/THEME_LOCALE';
-export const THEME_RTL = '@customization/THEME_RTL';
-export const SNACKBAR_OPEN = '@snackbar/SNACKBAR_OPEN';
-export const ACCOUNT_INITIALISE = 'ACCOUNT_INITIALISE';
-export const FIREBASE_STATE_CHANGED = 'FIREBASE_STATE_CHANGED';
-export const SET_MENU = 'SET_MENU';
+
 ```
 {% endtab %}
 
 {% tab title="Typescript" %}
 ```typescript
+...
 // SIS ACTIONS START
 export const FETCH_LEAVE_LIST = 'FETCH_LEAVE_LIST';
 export const fetchLeaveList = (): ReducerAction => ({
     type: FETCH_LEAVE_LIST
 });
+...
 ```
 {% endtab %}
 {% endtabs %}
 
 ## **Writing Reducers**
 
-Reducers are functions that take the current state and an action as arguments _\*\*_and return a new state result.
+Reducers are functions that take the current state and an action as arguments and return a new state result.
 
 ```javascript
 (state, action) => newState
@@ -219,7 +203,7 @@ export default {
 
 ## How to Remove redux-saga?
 
-redux-saga is very helpful to manage API calls in big scale applications. If you still don't want to use saga, you can remove it from middle-tier. 
+redux-saga is very helpful to manage API calls in big-scale applications. If you still don't want to use saga, you can remove it from the middle tier. 
 
 **todo: add steps to remove saga**
 

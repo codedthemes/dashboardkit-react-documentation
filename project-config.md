@@ -112,7 +112,6 @@ DashboardKit has a single source of truth for default configuration which lets u
 
 {% tabs %}
 {% tab title="config.js" %}
-
 ```javascript
 const config = {
   // basename: only at build time to set, and don't add '/' at end off BASENAME for breadcrumbs,  like '/DashboardKit-material-react/react/default'
@@ -145,6 +144,6 @@ const config = {
 
 export default config;
 ```
-
 {% endtab %}
 {% endtabs %}
+

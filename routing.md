@@ -18,7 +18,6 @@ Open**`...\src\routes\index.js`**You will find the below example code. In the be
 
 {% tabs %}
 {% tab title="\\routes\\index.js" %}
-
 ```javascript
 import React, { Suspense } from "react";
 import { Redirect, Switch } from "react-router-dom";
@@ -60,16 +59,14 @@ const Routes = () => {
 
 export default Routes;
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ### Add New menu/route in the main layout
 
-To add one more menu item in ``**`<MainRoutes />`**, update the following file at the same location **`...\src\routes\MainRoutes.js`\*\*
+To add one more menu item in ```****, update the following file at the same location **``...\src\routes\MainRoutes.js\`\*\*
 
 {% code title="MainRoutes.js" %}
-
 ```javascript
 ...
 ...
@@ -105,11 +102,10 @@ const MainRoutes = () => {
 };
 
 export default MainRoutes;
-
 ```
-
 {% endcode %}
 
 {% hint style="warning" %}
 Any route added in **`<MainLayout>`** will automatically go through**`<AuthGuard>`**
 {% endhint %}
+

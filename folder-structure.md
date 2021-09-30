@@ -17,32 +17,28 @@ DashboardKit-material-react
 ├── public
 ├── README.md
 ├── src
-│   ├── _mockApis          -> Mock Json data to be used for working apps
 │   ├── assets
 │   │   └── images
+│   │   └── fonts
 │   │   └── scss           -> Template SCSS files
 │   │       ├── style.scss -> Application main file
 │   │       └── _themes-vars.module.scss
-│   ├── contexts           -> State context for Login management
+│   ├── components         -> Template custom components, Cards, Widgets, Modals
+│   ├── config             -> Template constant value and live customization
+│   ├── contexts           -> State context
+│   ├── data               -> json data to serve in pages
 │   ├── hooks              -> Custom hooks
 │   ├── layout
-│   │   ├── DocsLayout     -> Layout for docs components & routers
-│   │   ├── MainLayout     -> Layout for main components & routers
-│   │   ├── MinimalLayout  -> Layout for mimimal components & routers
-│   │   ├── NavigationScroll.js
-│   │   └── NavMotion.js
-│   ├── menu-items.js      -> menu data
+│   │   ├── AdminLayout     -> Layout for main components & routers
 │   ├── routes             -> different route based on layouts
 │   ├── store              -> Redux actions, reducers
-│   ├── themes             -> Contains application style and theme
-│   ├── ui-component       -> Template custom components
+│   ├── types              -> Redux actions, reducers
 │   ├── utils
-│   │   ├── locales        -> different locale json files
-│   │   ├── route-guard    -> Auth guard to prevent unexpected navigations
-│   └── views              -> View files for all pages
-├── App.js                 -> starting point of application
-├── config.js              -> Template constant value and live customization
-├── index.js               -> Application root js file
+│   ├── views              -> View files for all pages
+│   ├── App.tsx            -> starting point of application
+│   ├── index.tsx          -> Application root
+│   ├── menu-items.js      -> menu data
+
 ```
 {% endtab %}
 {% endtabs %}

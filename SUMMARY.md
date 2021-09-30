@@ -5,8 +5,6 @@
 * [Quick Start](quick-start.md)
 * [Folder Structure](folder-structure.md)
 * [State Management](state-management.md)
-* [Remove\_Internationalization](internationalization.md)
-* [Authentication](authentication.md)
 * [Axios API Calls](axios-api-calls.md)
 * [Routing](routing.md)
 * [Project Configuration](project-config.md)

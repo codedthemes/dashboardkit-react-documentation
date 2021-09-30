@@ -20,9 +20,10 @@ Please be as specific as possible when starting a new ticket, it really helps us
 
 ## After submitting the ticket
 
-- Normally, we will get back to customers in 12-24 hours on normal business days.
-- The tickets will prioritize as came to us, first come first serve basis.
+* Normally, we will get back to customers in 12-24 hours on normal business days.
+* The tickets will prioritize as came to us, first come first serve basis.
 
 ## Support
 
 Please submit your ticket to [https://codedthemes.support-hub.io](https://codedthemes.support-hub.io/). We would love to hear from you anytime.
+

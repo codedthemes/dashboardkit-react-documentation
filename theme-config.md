@@ -79,11 +79,10 @@ export function theme(customization) {
 }
 
 export default theme;
-
 ```
 {% endcode %}
 
-As you can see colors for the theme came from the central location ``**`import value from '../assets/scss/_themes-vars.module.scss';`**
+As you can see colors for the theme came from the central location ```**``import value from '../assets/scss/\_themes-vars.module.scss';\`\*\*
 
 ```css
 // Paper & Background Color
@@ -154,14 +153,13 @@ $textDarkTitle: #d7dcec;
     deepOrange50: $deepOrange50;
     ...
 }
-
 ```
 
 You can check other settings like theme typography, palette, and components style override in the same folder. **`..src\themes`**
 
 ### How to customize it?
 
-You might come across questions like how to change a theme's **primary** color? How to change textbox or other components which can apply to an entire theme?  
+You might come across questions like how to change a theme's **primary** color? How to change textbox or other components which can apply to an entire theme?
 
 #### Customize Theme Colors
 
@@ -188,7 +186,6 @@ export function themePalatte(theme) {
 
     };
 }
-
 ```
 {% endcode %}
 
@@ -213,7 +210,6 @@ export function themeTypography(theme) {
         ...
     };
 }
-
 ```
 {% endcode %}
 
@@ -254,7 +250,6 @@ export function componentStyleOverrides(theme) {
         }
     };
 }
-
 ```
 {% endcode %}
 

@@ -15,7 +15,6 @@ Axios has been configured in the folder **`..src\utils\axios.js`**
 To use Axios on a page, you need to import it and make a call. After that, you need to make calls to Axios using **`axios.get('path')`** `or` **`axios.post('path')`** see below implementation.
 
 {% code title="axios.js" %}
-
 ```javascript
 ...
 import axios from '../../../../utils/axios'; // 1. import axios
@@ -65,13 +64,11 @@ const CardListPage = () => {
 
 export default SamplePage;
 ```
-
 {% endcode %}
 
 DashboardKit has all dummy data in folder **`src\_mockApis.`** For API, **`api/chat/users`**, following data configured in **`..\src_mockApis\chat\index.js`** :
 
 {% code title="\\chat\\index.js" %}
-
 ```javascript
 import services from './../../utils/mockAdapter';
 
@@ -122,9 +119,8 @@ services.onGet('/api/chat/users').reply(200, {users: users});
 ...
 ...
 });
-
 ```
-
 {% endcode %}
 
 You can configure the same for `post`methods as well.
+

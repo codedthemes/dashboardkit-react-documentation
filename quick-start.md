@@ -40,6 +40,10 @@ Note that the development build is not optimized.
 To create a production build, use yarn build.
 ```
 
+{% hint style="warning" %}
+Dashboard-Kit is a vast theme with many components, so it will take little time when you run it first time. Please do not stop execution if it takes time on first launch.
+{% endhint %}
+
 ## Build & Deploy
 
 This might be too early to deploy but it is always good to know how to deploy.
