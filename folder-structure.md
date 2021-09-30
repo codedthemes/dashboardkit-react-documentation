@@ -6,15 +6,10 @@ description: >-
 
 # Folder Structure
 
-{% embed url="https://youtu.be/IJ\_zQlPZvZ4?list=PLknn3jaIuWiDKKEy3EO-p5-MP1nSOgUr1" caption="Folder Structure" %}
-
-> If you prefer reading docs, continue reading below instead watching video.
-
-Under **`DashboardKit-material-react/`** directory, You will find following folder structure.
+Under **`dashboard-kit-react/`** directory, You will find the following folder structure.
 
 {% tabs %}
 {% tab title="Folder Structure" %}
-
 ```javascript
 DashboardKit-material-react
 ..
@@ -49,6 +44,6 @@ DashboardKit-material-react
 ├── config.js              -> Template constant value and live customization
 ├── index.js               -> Application root js file
 ```
-
 {% endtab %}
 {% endtabs %}
+
