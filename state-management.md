@@ -22,7 +22,7 @@ On top of that, it provides a great developer experience.
 
 Redux-saga library aims to make application side effects \(i.e. asynchronous things like data fetching and impure things like accessing the browser cache\) easier to manage, more efficient to execute, easy to test, and better at handling failures. Sagas enable numerous approaches to tackling parallel execution, task concurrency, task racing, task cancellation, and more. Keep total control over the flow of your code.
 
-Dashboard-Kit uses redux-saga as middleware to manage many things. There are 6 sagas in application for each app in theme.
+Dashboard-Kit uses redux-saga as middleware to manage many things. There are 6 sagas in application for each app in theme. Given example below is saga for SIS app of dashboard-kit.
 
 {% tabs %}
 {% tab title="JavaScript" %}

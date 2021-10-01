@@ -5,7 +5,7 @@
 * [Quick Start](quick-start.md)
 * [Folder Structure](folder-structure.md)
 * [State Management](state-management.md)
-* [Axios API Calls](axios-api-calls.md)
+* [Axios & Saga for API](axios-api-calls.md)
 * [Routing](routing.md)
 * [Project Configuration](project-config.md)
 * [Theme/Style Configuration](theme-config.md)

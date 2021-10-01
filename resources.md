@@ -3,6 +3,7 @@
 | Name | Info | Link |
 | :--- | :--- | :--- |
 | Reactjs | 17.0.2 | [https://reactjs.org/](https://reactjs.org/) |
+| Material-UI | 5.0.0-alpha.33 | [https://material-ui.com](%20%20https://material-ui.com) |
 | Redux |  | [https://react-redux.js.org/](https://react-redux.js.org/) |
 | Create React App |  |  |
 | React Router |  | [https://reactrouter.com/](https://reactrouter.com/) |
