@@ -4,15 +4,15 @@ description: Start working with DashboardKit with minimum setup by creating new 
 
 # Integration
 
-With the years of experience and after crafted many themes, we come to know that, users often confuse with how to use all those components with most of the admin templates which they downloaded/purchased from the internet. If you ever downloaded admin themes, you might come across questions like, _**"how can I use this component in the project?", "How can I create a new project and set up theme/components?", "Can I have minimal code-base to start?"**_ etc. If you ever found yourself in such a situation, we came here to the rescue.
+With the years of experience and after crafted many themes, we come to know that, users often confuse with how to use all those components with most of the admin templates which they downloaded/purchased from the internet. If you ever downloaded admin themes, you might come across questions like, 
+
+* **How can I use this component in the project?**
+* **How can I create a new project and set up theme/components?**
+* **Can I have minimal code-base to start?** etc. 
+
+If you ever found yourself in such a situation, we came here to the rescue.
 
 DashboardKit structured with a huge set of ready-to-use components. We tried to provide as many as possible components with customization so that you can integrate those directly into your projects.
-
-In this Integration article, we are going to explain, how can you create new a project with minimum setup and integrate some components as per your need. so let get' started.
-
-{% embed url="https://youtu.be/pIafoWJsd\_w" %}
-
-> If you prefer reading docs, continue reading below instead watching video.
 
 ## Get started with Skeleton
 
@@ -81,3 +81,4 @@ Cool and straightforward, right?
 You can do the same for other components and design your pages as per your needs. We have made common and reusable controls as well which you can see inside `/src/ui-component`. Feel free to refer to those as well and start developing your page.
 
 I hope, we cover some basics to get started with DashboardKit template and how to integrate for your new project.
+

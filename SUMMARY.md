@@ -8,7 +8,6 @@
 * [Axios & Saga for API](axios-api-calls.md)
 * [Routing](routing.md)
 * [Project Configuration](project-config.md)
-* [Theme/Style Configuration](theme-config.md)
 * [Integration](integration.md)
 * [Resources](resources.md)
 * [RoadMap](roadmap.md)

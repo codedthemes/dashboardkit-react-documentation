@@ -4,32 +4,11 @@ description: Our future plans for DashboardKit
 
 # RoadMap
 
-We love our community and customer base to achieve the best possible upcoming features in DashboardKit. Stay tuned with us.
+Given that, theme consist everything what need to kick start project, but there are still some improvement in pipeline. We love our community and customer base to achieve the best possible upcoming features in DashboardKit. Stay tuned with us.
 
 **Major Release**
 
-TypeScript version
+* JWT, Firebase auth
+* Multi-Language
+* RTL
 
-**Apps**
-
-- File Manager
-- Kanban
-- Saas
-
-**Styling**
-
-- Color Presets with options in Live Customizer
-- Button shadow color options
-- Animation
-- Megamenu
-- Search filter options menu
-
-**Forms**
-
-- Form Wizards
-- Form Layouts
-  - Multi-column
-  - With Label
-  - Horizontal
-  - Sticky Header
-  - Action bar
