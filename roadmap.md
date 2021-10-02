@@ -11,4 +11,5 @@ Given that, theme consist everything what need to kick start project, but there 
 * JWT, Firebase auth
 * Multi-Language
 * RTL
+* SEO Optimization
 

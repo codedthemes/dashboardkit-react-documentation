@@ -17,7 +17,6 @@ We’ve followed the best industry standards to make our product easy, fast & hi
 ## Technology Stack
 
 * React Bootstrap
-* ~~Authentication Methods - Auth0, Firebase, JWT~~
 * React Hooks API
 * Redux & React Context API for State Management
 * Redux Saga Middletier
@@ -26,7 +25,6 @@ We’ve followed the best industry standards to make our product easy, fast & hi
 * Create React App
 * Code Splitting
 * CSS-in-JS
-* ~~Multi-Language~~
 
 ## Credits
 
@@ -34,8 +32,11 @@ We’ve followed the best industry standards to make our product easy, fast & hi
 * [Create React App](https://github.com/facebook/create-react-app)
 * [Redux](https://redux.js.org/)
 * [React Router](https://github.com/ReactTraining/react-router)
+* [Redux-Saga](https://redux-saga.js.org/)
 * [Firebase](https://firebase.google.com/docs/auth), [Auth0](https://auth0.com/), [JWT](https://jwt.io/)
 * [Google Fonts](https://fonts.google.com/)
+
+
 
 ## Any Suggestion? OR Feedback
 

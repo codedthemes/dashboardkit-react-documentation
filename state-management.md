@@ -8,6 +8,8 @@ description: 'Managing context, state and hooks'
 
 Context provides a way to pass data through the component tree without having to pass props down manually at every level.
 
+We are using context for login methods - **`Auth0, JWT, Firebase.`**
+
 ## Redux
 
 React Redux is the official React binding for Redux. It lets your React components read data from a Redux store, and dispatch actions to the store to update data.
@@ -18,74 +20,14 @@ It helps you write applications that behave consistently, run in different envir
 
 On top of that, it provides a great developer experience.
 
-## Redux-Saga
-
-Redux-saga library aims to make application side effects \(i.e. asynchronous things like data fetching and impure things like accessing the browser cache\) easier to manage, more efficient to execute, easy to test, and better at handling failures. Sagas enable numerous approaches to tackling parallel execution, task concurrency, task racing, task cancellation, and more. Keep total control over the flow of your code.
-
-Dashboard-Kit uses redux-saga as middleware to manage many things. There are 6 sagas in application for each app in theme. Given example below is saga for SIS app of dashboard-kit.
-
-{% tabs %}
-{% tab title="JavaScript" %}
-```javascript
-
-```
-{% endtab %}
-
-{% tab title="TypeScript" %}
-```typescript
-// third party
-import { takeEvery, fork, put, call } from 'redux-saga/effects';
-import { AxiosResponse } from 'axios';
-
-// project imports
-import {
-    FETCH_LEAVE_LIST,
-    ...
-} from 'store/actions';
-import { ReducerAction } from 'types/application';
-import { Result } from 'types/table';
-import { getLeaves, getEvaluations } from 'services/sis';
-
-function* workerFetchLeaveList(action: ReducerAction) {
-    try {
-        const response: AxiosResponse<Array<Result>> = yield call(getLeaves);
-
-        yield put({
-            type: FETCH_LEAVE_LIST_SUCCESS,
-            payload: response.data || []
-        });
-    } catch (error) {
-        yield put({
-            type: FETCH_LEAVE_LIST_ERROR,
-            error
-        });
-    }
-}
-
-
-function* watcherFetchLeaveList() {
-    yield takeEvery(FETCH_LEAVE_LIST, workerFetchLeaveList);
-}
-
-
-export default [fork(watcherFetchLeaveList)];
-
-```
-{% endtab %}
-{% endtabs %}
-
 ## State
 
 With Redux, our application state is always kept in plain JavaScript objects and arrays which means you may not put other things into the Redux state - no class instances, built-in JS types like Map / Set Promise / Date, functions, or anything else that is not plain JS data
 
 The root Redux state value is almost always a plain JS object, with other data nested inside of it.
 
-Based on this information, we should now be able to describe the kinds of values we need to have inside our Redux state.
+Based on this information, we should now be able to describe the kinds of values we need to have inside our Redux state:
 
-As we are using redux-saga, the state gets an auto-update from saga once the reponse is received.
-
-{% tabs %}
-{% tab title="JavaScript" %}
 ```javascript
 export const initialState = {
     isOpen: 'dashboard', //for active default menu
@@ -95,20 +37,6 @@ export const initialState = {
     opened: true
 };
 ```
-{% endtab %}
-
-{% tab title="TypeScript" %}
-```typescript
-export const initialState = {
-    isOpen: 'dashboard', //for active default menu
-    navType: config.theme,
-    locale: config.i18n,
-    rtlLayout: false, // rtlLayout: config.rtlLayout,
-    opened: true
-};
-```
-{% endtab %}
-{% endtabs %}
 
 ## Designing Actions
 
@@ -128,29 +56,22 @@ In the same way that we designed the state structure based on the app's requirem
 
 Based on that list of things that can happen, we can create a list of actions that our application will use:
 
-{% tabs %}
-{% tab title="JavaScript" %}
 ```javascript
-
+export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';
+export const MENU_OPEN = '@customization/MENU_OPEN';
+export const MENU_TYPE = '@customization/MENU_TYPE';
+export const THEME_LOCALE = '@customization/THEME_LOCALE';
+export const THEME_RTL = '@customization/THEME_RTL';
+export const SNACKBAR_OPEN = '@snackbar/SNACKBAR_OPEN';
+export const ACCOUNT_INITIALISE = 'ACCOUNT_INITIALISE';
+export const FIREBASE_STATE_CHANGED = 'FIREBASE_STATE_CHANGED';
+export const SET_MENU = 'SET_MENU';
 ```
-{% endtab %}
-
-{% tab title="Typescript" %}
-```typescript
-...
-// SIS ACTIONS START
-export const FETCH_LEAVE_LIST = 'FETCH_LEAVE_LIST';
-export const fetchLeaveList = (): ReducerAction => ({
-    type: FETCH_LEAVE_LIST
-});
-...
-```
-{% endtab %}
-{% endtabs %}
 
 ## **Writing Reducers**
 
-Reducers are functions that take the current state and an action as arguments and return a new state result.
+Reducers are functions that take the current state and an action as arguments ****and return a new state result.
 
 ```javascript
 (state, action) => newState
@@ -158,52 +79,50 @@ Reducers are functions that take the current state and an action as arguments an
 
 Creating the Root Reducer - A Redux app really only has one reducer function: the "root reducer" function
 
-{% tabs %}
-{% tab title="JavaScript" %}
 ```javascript
+import * as actionTypes from './actions';
+import config from '../config';
 
-```
-{% endtab %}
+export const initialState = {
+    isOpen: 'dashboard', //for active default menu
+    navType: config.theme,
+    locale: config.i18n,
+    rtlLayout: false, // rtlLayout: config.rtlLayout,
+    opened: true
+};
 
-{% tab title="Typescript" %}
-```typescript
-// third party
-import { Reducer, combineReducers } from 'redux';
-import _ from 'lodash';
-
-// project imports
-import * as actionTypes from 'store/actions';
-import { ReducerAction, ReducerInitialState, InitialState } from 'types/application';
-
-const leaveList: Reducer<ReducerInitialState> = (state = InitialState, action: ReducerAction) => {
+const customizationReducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.FETCH_LEAVE_LIST_SUCCESS: {
-            return { data: _.get(action, 'payload', []), error: {} };
-        }
-
-        case actionTypes.FETCH_LEAVE_LIST_ERROR: {
-            return { data: {}, error: _.get(action, 'error', {}) };
-        }
-
+        case actionTypes.MENU_OPEN:
+            return {
+                ...state,
+                isOpen: action.isOpen
+            };
+        case actionTypes.MENU_TYPE:
+            return {
+                ...state,
+                navType: action.navType
+            };
+        case actionTypes.THEME_LOCALE:
+            return {
+                ...state,
+                locale: action.locale
+            };
+        case actionTypes.THEME_RTL:
+            return {
+                ...state,
+                rtlLayout: action.rtlLayout
+            };
+        case actionTypes.SET_MENU:
+            return {
+                ...state,
+                opened: action.opened
+            };
         default:
             return state;
     }
 };
 
-
-export default {
-    sis: combineReducers({
-        leaveList,
-    })
-};
-
+export default customizationReducer;
 ```
-{% endtab %}
-{% endtabs %}
-
-## How to Remove redux-saga?
-
-redux-saga is very helpful to manage API calls in big-scale applications. If you still don't want to use saga, you can remove it from the middle tier. 
-
-**todo: add steps to remove saga**
 
