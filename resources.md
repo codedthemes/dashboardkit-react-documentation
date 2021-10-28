@@ -1,33 +1,20 @@
 # Resources
 
-| Name | Info | Link |
-| :--- | :--- | :--- |
-| Reactjs | 17.0.2 | [https://reactjs.org/](https://reactjs.org/) |
-| Material-UI | 5.0.0-alpha.33 | [https://material-ui.com](%20%20https://material-ui.com) |
-| Redux |  | [https://react-redux.js.org/](https://react-redux.js.org/) |
-| Create React App |  |  |
-| React Router |  | [https://reactrouter.com/](https://reactrouter.com/) |
-| React Script |  |  |
-| React Spring | Animation |  |
-| Axios |  | [https://www.npmjs.com/package/axios](https://www.npmjs.com/package/axios) |
-| Axios Mock Adapter |  | [https://www.npmjs.com/package/axios-mock-adapter](https://www.npmjs.com/package/axios-mock-adapter) |
-| Internationalization | Multi-language |  |
-| Auth0 |  |  |
-| Firebase |  |  |
-| JWT |  |  |
-| Fullcalendar |  |  |
-| Emoji Picker |  |  |
-| Framer Motion | Animation |  |
-| Material-ui-image | Image load |  |
-| Apexchart | Chart |  |
-| WYSIWYG | Editor |  |
-| Quill | Editor |  |
-| reCaptcha |  |  |
-| Markdown | Syntax Highlighter |  |
-| Text Mask |  |  |
-| Print | Print button |  |
-| Material Icons | Icons |  |
-| Tabler | Icons |  |
-| Unsplash | Images |  |
-|  |  |  |
-
+| Name               | Info               | Link                                                                                                 |
+| ------------------ | ------------------ | ---------------------------------------------------------------------------------------------------- |
+| Reactjs            | 16.4.0             | [https://reactjs.org/](https://reactjs.org)                                                          |
+| React-Redux        | 7.2.2              | [https://react-redux.js.org/](https://react-redux.js.org)                                            |
+| Create React App   |                    |                                                                                                      |
+| React Router       | 5.1.7              | [https://reactrouter.com/](https://reactrouter.com)                                                  |
+| React Script       | 4.0.2              |                                                                                                      |
+| Axios              | 0.21.1             | [https://www.npmjs.com/package/axios](https://www.npmjs.com/package/axios)                           |
+| Axios Mock Adapter |                    | [https://www.npmjs.com/package/axios-mock-adapter](https://www.npmjs.com/package/axios-mock-adapter) |
+| Fullcalendar       |                    |                                                                                                      |
+| Apexchart          | Chart              |                                                                                                      |
+| WYSIWYG            | Editor             |                                                                                                      |
+| Quill              | Editor             |                                                                                                      |
+| reCaptcha          |                    |                                                                                                      |
+| Markdown           | Syntax Highlighter |                                                                                                      |
+| React-input-mask   |                    |                                                                                                      |
+| Print              | Print button       |                                                                                                      |
+|                    |                    |                                                                                                      |
