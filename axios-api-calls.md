@@ -1,130 +1,186 @@
 ---
-description: Mock API calls
+description: Mock API calls and setup Saga middle-tier
 ---
 
-# Axios API Calls
+# Axios & Saga for API
 
 ## Mock Calls
 
-DashboardKit uses fack/mock data to render some pages and actions. Mocking has been achieved with help of Axios. It helps users to do minimal changes to load live data. Users just need to change the mock API URL to the Live service URL.
+DashboardKit uses fack/mock data to render some pages and actions. Mocking has been achieved with the help of **Axios**. It helps users to do minimal changes to load live data. Users just need to change the mock API URL to the Live service URL.
 
-### How does it work?
+### Setup Axios
 
-Axios has been configured in the folder **`..src\utils\axios.js`**
+Axios has been added request interceptor in the file **`..src\utils\axios.js `**so that every request intercepts through this.
 
-To use Axios on a page, you need to import it and make a call. After that, you need to make calls to Axios using **`axios.get('path')`** `or` **`axios.post('path')`** see below implementation.
-
-{% code title="axios.js" %}
-
+{% code title="src\utils\axios.ts" %}
 ```javascript
-...
-import axios from '../../../../utils/axios'; // 1. import axios
-...
+/**
+ * Axios setup to use mock service
+ */
 
-const CardListPage = () => {
-    const [data, setData] = React.useState([]);
+import axios from 'axios';
 
-    ...
-    ...
+const axiosServices = axios.create();
 
-    // get dummy data
-    const getData = async () => {
-        const response = await axios.get('/api/chat/users'); // 2. change it to live service URL
-        setData(response.data.users);
-        return response.data.users;
-    };
+// interceptor for http
+axiosServices.interceptors.response.use(
+    (response) => response,
+    (error) => Promise.reject((error.response && error.response.data) || 'Wrong Services')
+);
 
-    ...
-    ...
+export default axiosServices;
 
-    // 3. call to get data
-    React.useEffect(() => {
-        getData();
-    }, []);
-
-    ...
-    ...
-
-    // use data in HTML
-    {Object.keys(data).map((key, index) => {
-        return (
-            <React.Fragment key={index}>
-
-            ...
-            ...
-
-            </React.Fragment>
-            );
-    ...
-    ...
-
-        })
-    };
-
-};
-
-export default SamplePage;
 ```
-
 {% endcode %}
 
-DashboardKit has all dummy data in folder **`src\_mockApis.`** For API, **`api/chat/users`**, following data configured in **`..\src_mockApis\chat\index.js`** :
+#### Setup axios-mock-adapter
 
-{% code title="\\chat\\index.js" %}
-
+{% code title="src\utils\mockAdapter.ts" %}
 ```javascript
-import services from './../../utils/mockAdapter';
+/**
+ * Adaptor for Axios
+ */
 
-...
+import AxiosMockAdapter from 'axios-mock-adapter';
+import axios from './axios';
+//  import axios from 'axios';
 
-let users = [
-    {
-        id: 1,
-        name: 'Alene',
-        company: 'ABC Pvt Ltd',
-        role: 'Sr. Customer Manager',
-        work_email: 'alene_work@company.com',
-        personal_email: 'alene@company.com',
-        work_phone: '380-293-0177',
-        personal_phone: '380-293-0177',
-        location: 'Port Narciso',
-        avatar: 'avatar-1.png',
-        status: 'Laboris non ad et',
-        lastMessage: '2h ago',
-        birthdayText: 'happy Birthday Alene',
-        unReadChatCount: 2,
-        online_status: 'available'
-    },
-    {
-        id: 2,
-        name: 'Keefe',
-        company: 'ABC Pvt Ltd',
-        role: 'Dynamic Operations Officer',
-        work_email: 'keefe_work@gmil.com',
-        personal_email: 'keefe@gmil.com',
-        work_phone: '253-418-5940',
-        personal_phone: '253-418-5940',
-        location: 'Afghanistan',
-        avatar: 'avatar-2.png',
-        status: 'Laboris non ad et',
-        lastMessage: '1:20 AM',
-        birthdayText: 'happy Birthday Keefe',
-        unReadChatCount: 3,
-        online_status: 'available'
-    }
-    ...
-    ...
-];
+const services = new AxiosMockAdapter(axios, { delayResponse: 0 });
+export default services;
+
+```
+{% endcode %}
+
+### How does data get loaded into components?
+
+To understand this, we are going to take an example of one app panel and try to understand it. Let's say I want to load data for the [leave page of SIS panel](http://dashboardkit.io/react/sis/sis-leave).  There are following things that need to be done.
+
+1. Create reducer action
+2. Create reducer to update store
+3. Setup saga and worker to listen to every request
+4. Create Axios servive to be called from Saga worker
+5. Finally, Dispatch action from component to get data
+
+* Create reducer action
+
+{% code title="src\store\actions.ts" %}
+```javascript
 ...
-...
-];
-services.onGet('/api/chat/users').reply(200, {users: users});
-...
-...
+// SIS ACTIONS START
+export const FETCH_LEAVE_LIST = 'FETCH_LEAVE_LIST';
+export const fetchLeaveList = (): ReducerAction => ({
+    type: FETCH_LEAVE_LIST
 });
 
+export const FETCH_LEAVE_LIST_SUCCESS = 'FETCH_LEAVE_LIST_SUCCESS';
+export const FETCH_LEAVE_LIST_ERROR = 'FETCH_LEAVE_LIST_ERROR';
+...
 ```
-
 {% endcode %}
 
-You can configure the same for `post`methods as well.
+* Create reducer to update store after getting response back from saga
+
+{% code title="src\store\reducers\sis.ts" %}
+```javascript
+// project imports
+import * as actionTypes from 'store/actions';
+import { ReducerAction, ReducerInitialState, InitialState } from 'types/application';
+
+const leaveList: Reducer<ReducerInitialState> = (state = InitialState, action: ReducerAction) => {
+    switch (action.type) {
+        case actionTypes.FETCH_LEAVE_LIST_SUCCESS: {
+            return { data: _.get(action, 'payload', []), error: {} };
+        }
+
+        case actionTypes.FETCH_LEAVE_LIST_ERROR: {
+            return { data: {}, error: _.get(action, 'error', {}) };
+        }
+
+        default:
+            return state;
+    }
+};
+```
+{% endcode %}
+
+* &#x20;The component dispatches a plain object action to the store. We'll create a Saga that watches for all `FETCH_LEAVE_LIST` actions and triggers an Axios API call to fetch the user data. Once a response received, we will dispatch another action using 'put' that will update the store
+
+{% code title="src\store\sagas\sis.ts" %}
+```javascript
+...
+...
+function* workerFetchLeaveList(action: ReducerAction) {
+    try {
+        const response: AxiosResponse<Array<Result>> = yield call(getLeaves); // Axios call
+
+        yield put({
+            type: FETCH_LEAVE_LIST_SUCCESS,
+            payload: response.data || []
+        });
+    } catch (error) {
+        yield put({
+            type: FETCH_LEAVE_LIST_ERROR,
+            error
+        });
+    }
+}
+...
+...
+
+function* watcherFetchLeaveList() {
+    yield takeEvery(FETCH_LEAVE_LIST, workerFetchLeaveList);
+}
+
+```
+{% endcode %}
+
+* We did set up **saga**, now we will define Axios service so that it returns data.
+
+{% code title="src\services\sis.ts" %}
+```javascript
+import axios from 'utils/axios';
+
+export const getLeaves = () => axios.get('/api/sis/leaves');
+
+...
+
+```
+{% endcode %}
+
+* Axios call will happen and returns data.
+
+{% code title="src\_mockApis\sis.ts" %}
+```javascript
+// project imports
+import services from 'utils/mockAdapter';
+import { makeData } from 'data/sisData';
+
+// ==============================|| MOCK SERVICES ||============================== //
+
+// Sis API's
+services.onGet('/api/sis/leaves').reply(200, makeData(100));
+...
+
+```
+{% endcode %}
+
+* Now everything has been setup, you can dispatch action to get data from component.
+
+{% code title="src\views\panels\sis\Leave.tsx" %}
+```javascript
+...
+useEffect(() => {
+        if (_.isEmpty(leaveList)) {
+            dispatch(fetchLeaveList());
+        }
+}, [dispatch]);
+...
+```
+{% endcode %}
+
+To know more about redux-saga and Axios, refer below:
+
+{% embed url="https://redux-saga.js.org/" %}
+
+{% embed url="https://axios-http.com/" %}
+
