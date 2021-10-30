@@ -16,7 +16,7 @@ DashboardKit is structured with a huge set of ready-to-use components. We tried 
 
 ## Get started with Skeleton
 
-If you have a purchased theme, it already comes with a skeleton structure, so that you can start directly from there. **Skeleton is a folder structure created using react-script with minimal files from the full version to get started**. It has all the dependencies preloaded in `package.json` so you do not need to add any additional dependency unless needed from your side. It has a sample page to get started; With that, Routes, menus, styles, configuration, and many other things have already set into that which saves ample no. of hours to set up a new project. Isn't it cool and time-savvy?
+If you have a purchased theme, it already comes with a skeleton structure, so that you can start directly from there. **Skeleton is a folder structure created using react-script with minimal files from the full version to get started**. It has all the dependencies preloaded in `package.json` so you do not need to add any additional dependency unless needed from your side. It has a sample page to get started; With that, Routes, menus, styles, configuration, and many other things have already been set into that which saves ample no. of hours to set up a new project. Isn't it cool and time-savvy?
 
 {% hint style="warning" %}
 The Skeleton version is only available in the purchased package.
@@ -24,60 +24,62 @@ The Skeleton version is only available in the purchased package.
 
 So when you run the project using yarn/npm, you will see a minimal site like below:
 
-![Skeleton in action](.gitbook/assets/screenshot-2021-06-05-121623.png)
+![](<.gitbook/assets/Screenshot 2021-10-30 120354 (1).png>)
 
-It provides you a very simple and intuitive structure to get started with a new project. You can add new components from the full version. Now let's see how can we do that.
+It provides you with a very simple and intuitive structure to get started with a new project. You can add new components from the full version. Now let's see how can we do that.
 
 ### Add components into skeleton/new project
 
 Now, let's add some cool components from the full version to the project which we just created. It will help you to craft your pages as per your need. So Let's begin:
 
-Consider a scenario that you want to add `TotalEarning` widget (Left card on default dashboard) from the full version default dashboard to the sample page. For that, we need to do the following things in order.
+Consider a scenario that you want to add `StatisticCard` widget from the full version default dashboard to the sample page. For that, we need to do the following things in order.
 
-1. Remove content inside `<MainCard>` from sample-page/index.js.
-2. Copy file `src/views/dashboard/Default/EarningCard.js` to `Sample` folder. **Resolves path and asset dependencies by copying missing assets from the full version.**
-3. You will have the following final version of `sample/index.js`
+1. Find StatisticCard from `src\components\Widgets\Statistic\StatisticCard.tsx`
+2. Add card to the index page.
+3. You will have the following final version of `sample/index.tsx`
 
 ```javascript
-const SamplePage = () => {
-  return (
-    <MainCard title="Sample Card">
-      <EarningCard></EarningCard>
-    </MainCard>
-  );
-};
+// react-bootstrap
+import StatisticCard from 'components/Widgets/Statistic/StatisticCard';
+import { Card, Row, Col } from 'react-bootstrap';
 
-export default SamplePage;
+// -----------------------|| SAMPLE ||-----------------------//
+const Sample = (): React.ReactElement => (
+    <Row>
+        <Col sm={12}>
+            <Card>
+                <Card.Header>
+                    <Card.Title as="h5">Hello card</Card.Title>
+                </Card.Header>
+                <Card.Body>
+                    <StatisticCard
+                        params={{
+                            iconClass: 'icon-arrow-up text-success',
+                            variant: 'primary',
+                            valuenow: 50,
+                            title: 'Daily Sales',
+                            primaryText: '249.95',
+                            secondaryText: '67%'
+                        }}
+                    />
+                </Card.Body>
+            </Card>
+        </Col>
+    </Row>
+);
+
+export default Sample;
+
 ```
 
 The output of this will be following:
 
-![](.gitbook/assets/screenshot-2021-06-05-150007.png)
+![](<.gitbook/assets/Screenshot 2021-10-30 121700.png>)
 
-Not looked pretty right, that is because the card is spread around all 12 columns, we need to limit it to specific columns. Change code as follows by adding [material-ui grid system](https://material-ui.com/components/grid/#grid):
-
-```javascript
-const SamplePage = () => {
-  return (
-    <MainCard title="Sample Card">
-      <Grid container>
-        <Grid item xs={3}>
-          <EarningCard></EarningCard>
-        </Grid>
-      </Grid>
-    </MainCard>
-  );
-};
-
-export default SamplePage;
-```
-
-It will output as following:
-
-![](.gitbook/assets/screenshot-2021-06-05-150544.png)
+You can set styling as per your need after that.
 
 Cool and straightforward, right?
 
-You can do the same for other components and design your pages as per your needs. We have made common and reusable controls as well which you can see inside `/src/ui-component`. Feel free to refer to those as well and start developing your page.
+You can do the same for other components and design your pages as per your needs. We have made common and reusable controls as well which you can see inside `/src/components`. Feel free to refer to those as well and start developing your page.
 
 I hope, we cover some basics to get started with the DashboardKit template and how to integrate it for your new project.

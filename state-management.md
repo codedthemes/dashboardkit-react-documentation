@@ -25,11 +25,6 @@ Redux-saga library aims to make application side effects (i.e. asynchronous thin
 Dashboard-Kit uses redux-saga as middleware to manage many things. There are 6 sagas in application for each app in theme. Given example below is saga for SIS app of dashboard-kit.
 
 {% tabs %}
-{% tab title="JavaScript" %}
-```javascript
-```
-{% endtab %}
-
 {% tab title="TypeScript" %}
 ```typescript
 // third party
@@ -128,11 +123,6 @@ In the same way that we designed the state structure based on the app's requirem
 Based on that list of things that can happen, we can create a list of actions that our application will use:
 
 {% tabs %}
-{% tab title="JavaScript" %}
-```javascript
-```
-{% endtab %}
-
 {% tab title="Typescript" %}
 ```typescript
 ...
@@ -157,11 +147,6 @@ Reducers are functions that take the current state and an action as arguments an
 Creating the Root Reducer - A Redux app really only has one reducer function: the "root reducer" function
 
 {% tabs %}
-{% tab title="JavaScript" %}
-```javascript
-```
-{% endtab %}
-
 {% tab title="Typescript" %}
 ```typescript
 // third party

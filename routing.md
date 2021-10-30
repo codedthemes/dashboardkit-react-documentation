@@ -17,7 +17,7 @@ You can use the below explanation to add/remove menu routes and their menu items
 Open**`...\src\routes\route.tsx`**You will find the below example code. In the below code we have shown four different routes.
 
 {% tabs %}
-{% tab title="" %}
+{% tab title="typescript" %}
 {% code title="src\routes\routes.tsx" %}
 ```javascript
 import { lazy } from 'react';

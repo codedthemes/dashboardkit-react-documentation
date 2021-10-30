@@ -12,7 +12,6 @@ DashboardKit has a single source of truth for default configuration which lets u
 | BASE\_URL       | /dashboard/sales | string        | default path                                                    |
 | BASE\_TITLE     | -                | String        | set page title                                                  |
 | layout          | vertical         | number        | layout option. i.e.                                             |
-| collapseMenu    | false            | boolean       | collapsible menu or not.                                        |
 | layoutType      | dark-sidebar     | String        | layout options. i.e. light-sidebar, dark-sidebar                |
 | pageType        | -                | String        | app-dark-mode                                                   |
 | colorBrand      | -                | boolean       | bg-primary, bg-danger, bg-warning, bg-info, bg-success, bg-dark |
@@ -30,7 +29,6 @@ export const BASE_TITLE = ' | DashboardKit React Bootstrap 5 Admin Template';
 // -----------------------|| Application default Configuration ||-----------------------//
 export const CONFIG = {
     layout: 'vertical', // vertical, horizontal
-    collapseMenu: false, // true for mini-menu
     layoutType: 'dark-sidebar', // light-sidebar
     pageType: '', // app-dark-mode
     colorBrand: 'bg-danger', // bg-primary, bg-danger, bg-warning, bg-info, bg-success, bg-dark
